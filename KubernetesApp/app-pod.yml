@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: app-pod
+  labels:
+      app: app
+      type: mvc
+spec:
+  containers:
+    - name: app-mvc
+      image: aordenes/mvc-prototipo:v2.0
+      ports: 
+        - containerPort: 80
+      env: 
+        - name: ConnectionStrings__ContextoCurso
+          value: Server=mssql-service;Database=CursosOnline;User=sa;Password=@Marzo2021
+

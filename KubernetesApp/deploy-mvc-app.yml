@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-deploy
+  labels:
+      app: app-deploy
+      type: app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: app
+      type: mvc
+  template:
+    metadata:
+      name: app-pod
+      labels:
+          app: app
+          type: mvc
+    spec:
+      containers:
+        - name: app-mvc
+          image: aordenes/mvc-prototipo:v2.0
+          ports: 
+            - containerPort: 80
+          env: 
+            - name: ConnectionStrings__ContextoCurso
+              value: Server=mssql-service;Database=CursosOnline;User=sa;Password=@Marzo2021
