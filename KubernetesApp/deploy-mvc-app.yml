@@ -25,4 +25,4 @@ spec:
             - containerPort: 80
           env: 
             - name: ConnectionStrings__ContextoCurso
-              value: Server=mssql-service;Database=CursosOnline;User=sa;Password=@Marzo2022
+              value: Server=mssql-service;Database=CursosOnline;User=sa;Password=@Marzo2021
